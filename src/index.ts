@@ -3,10 +3,10 @@ import * as fs from "fs";
 import * as path from "path";
 
 function writeFile(): void {
-  const relativeFilePath = readline.question(
+  const relativeFilePath: string = readline.question(
     "What is the file location you want to save in?  "
   );
-  const text = readline.question("Enter note to save :    ");
+  const text: string = readline.question("Enter note to save :    ");
   try{
     fs.writeFileSync(path.join(__dirname, relativeFilePath), text, {
         encoding: "utf-8",
@@ -19,8 +19,8 @@ function writeFile(): void {
   }
 }
 
-function readFile() {
-    const relativeFilePath = readline.question(
+function readFile(): void {
+    const relativeFilePath: string = readline.question(
         "Enter file name to read :  "
       );
       try{
@@ -34,7 +34,7 @@ function readFile() {
      
 }
 
-const option = readline.questionInt(
+const option: number = readline.questionInt(
   "Choose Option :\n1:  Write File\n2:  Read File\n\nEnter Option:    "
 );
 switch (option) {
